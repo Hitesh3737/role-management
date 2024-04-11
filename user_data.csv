@@ -1,0 +1,19 @@
+import csv
+
+# Sample data
+data = [
+    {"Name": "John Doe", "Email": "john@example.com"},
+    {"Name": "Jane Smith", "Email": "jane@example.com"},
+    {"Name": "Alice Johnson", "Email": "alice@example.com"}
+]
+
+# Specify the CSV file name
+csv_file = 'user_data.csv'
+
+# Write the data to the CSV file
+with open(csv_file, 'w', newline='') as file:
+    writer = csv.DictWriter(file, fieldnames=["Name", "Email"])
+    writer.writeheader()
+    writer.writerows(data)
+
+print("CSV file created successfully!")
